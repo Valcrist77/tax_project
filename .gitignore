@@ -17,3 +17,7 @@ node_modules
 
 # Generated js bundles
 /app/assets/webpack/*
+
+# rvm files
+.ruby-gemset
+.ruby-version
