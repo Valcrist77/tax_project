@@ -16,8 +16,10 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Used Devise for User Authentication
+# Use Devise for User Authentication
 gem 'devise'
+# Use for encrypting database fields
+gem 'attr_encrypted'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
