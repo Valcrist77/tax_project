@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514181408) do
+ActiveRecord::Schema.define(version: 20160514183708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "federal_income_tax_forms", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "middle_initial"
+    t.string   "last_name"
+    t.string   "encrypted_ssn"
+    t.string   "encrypted_ssn_iv"
+    t.string   "spouse_first_name"
+    t.string   "spouse_middle_initial"
+    t.string   "spouse_last_name"
+    t.string   "spouse_encrypted_ssn"
+    t.string   "spouse_encrypted_ssn_iv"
+    t.string   "home_address"
+    t.string   "apartment_number"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.float    "wages"
+    t.float    "taxable_interest"
+    t.float    "unemployment_compensation"
+    t.boolean  "claimed_as_dependent"
+    t.boolean  "spouse_claimed_as_dependent"
+    t.float    "federal_income_tax_withheld"
+    t.float    "earned_income_credit"
+    t.boolean  "full_year_coverage"
+    t.float    "health_care_individual_responsibility"
+    t.string   "account_type"
+    t.string   "routing_number"
+    t.string   "account_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
