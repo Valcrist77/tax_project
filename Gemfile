@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 # Use for encrypting database fields
 gem 'attr_encrypted'
+gem 'responders'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
