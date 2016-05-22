@@ -3,6 +3,8 @@ import _ from 'lodash';
 import BasicInfoPage from './BasicInfoPage'
 import IncomePage from './IncomePage'
 import PaymentsCreditsTaxPage from './PaymentsCreditsTaxPage'
+import NavBar from './NavBar';
+import classnames from 'classnames';
 
 export default class WizardForm extends React.Component {
   constructor(props){
@@ -15,23 +17,42 @@ export default class WizardForm extends React.Component {
     }
   }
 
-  nextPage() {
+  nextPage(e) {
+    e.preventDefault();
     this.setState({ page: this.state.page + 1 })
   }
 
-  previousPage() {
+  previousPage(e) {
+    e.preventDefault();
     this.setState({ page: this.state.page - 1 })
   }
 
   render() {
     const { onSubmit } = this.props
     const { page } = this.state
+    let steps = {
+      1: () => <BasicInfoPage onSubmit={this.nextPage}/>,
+      2: () => <IncomePage previousPage={this.previousPage} onSubmit={this.nextPage}/>,
+      3: () => <PaymentsCreditsTaxPage previousPage={this.previousPage} onSubmit={onSubmit}/>
+    }
     return (
       <div>
-        {page === 1 && <BasicInfoPage onSubmit={this.nextPage}/>}
-        {page === 2 && <IncomePage previousPage={this.previousPage} onSubmit={this.nextPage}/>}
-        {page === 3 && <PaymentsCreditsTaxPage previousPage={this.previousPage} onSubmit={onSubmit}/>}
+        <NavBar title='Taxes.'/>
+        <SectionTitle sectionTitle='Basic Info'/>
+        {steps[page]()}
       </div>
     );
+  }
+}
+
+export class SectionTitle extends React.Component {
+  render(){
+    return (
+      <div className='container'>
+        <div className={classnames('center-text', 'section-title')}>
+          {this.props.sectionTitle}
+        </div>
+      </div>
+    )
   }
 }

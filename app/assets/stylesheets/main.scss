@@ -1,2 +1,29 @@
 @import "base/mixins.scss";
 @import "base/globals.scss";
+
+$heading2: 32px;
+
+/* Navigation Bar */
+.nav-bar {
+  background-color: $affair-purple;
+  height: 64px;
+  color: white;
+  font-size: $heading2;
+  padding-left: 32px;
+
+  .title {
+    padding-top: 7px;
+  }
+}
+
+/* Section Title */
+.section-title{
+  font-size: $heading2;
+  color: $affair-purple;
+  height: 64px;
+  padding-top: 10px;
+}
+
+.center-text {
+  text-align: center;
+}
