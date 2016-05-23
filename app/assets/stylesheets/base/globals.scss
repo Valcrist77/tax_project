@@ -2,3 +2,23 @@
 $affair-purple: #714E8F;
 $yellow-green: #B8E986;
 $pumpkin-orange: #FF801F;
+
+@font-face {
+  font-family: "Avenir Black";
+  src: url(/assets/AvenirLTPro-Black.otf) format('opentype');
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: url(/assets/AvenirLTPro-Heavy.otf) format('opentype');
+}
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url(/assets/AvenirLTPro-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url(/assets/AvenirLTPro-Light.otf) format('opentype');
+}

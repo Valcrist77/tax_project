@@ -4,6 +4,7 @@ import BasicInfoPage from './BasicInfoPage'
 import IncomePage from './IncomePage'
 import PaymentsCreditsTaxPage from './PaymentsCreditsTaxPage'
 import NavBar from './NavBar';
+import Breadcrumbs from './Breadcrumbs';
 import classnames from 'classnames';
 
 export default class WizardForm extends React.Component {
@@ -39,9 +40,20 @@ export default class WizardForm extends React.Component {
       <div>
         <NavBar title='Taxes.'/>
         <SectionTitle sectionTitle='Basic Info'/>
+        <Breadcrumbs currentSection={this.getCurrentSection()}/>
         {steps[page]()}
       </div>
     );
+  }
+
+  getCurrentSection(){
+    if (this.state.page==1) {
+      return 1;
+    } else if (this.state.page==2) {
+      return 2;
+    } else {
+      return null;
+    }
   }
 }
 

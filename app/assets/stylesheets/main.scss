@@ -1,7 +1,11 @@
 @import "base/mixins.scss";
 @import "base/globals.scss";
 
-$heading2: 32px;
+$heading2: 24px;
+
+body {
+  font-family: 'Avenir Book';
+}
 
 /* Navigation Bar */
 .nav-bar {
@@ -10,20 +14,138 @@ $heading2: 32px;
   color: white;
   font-size: $heading2;
   padding-left: 32px;
+  font-family: 'Avenir Heavy';
 
   .title {
-    padding-top: 7px;
+    padding-top: 15px;
   }
 }
 
 /* Section Title */
-.section-title{
+.section-title {
   font-size: $heading2;
   color: $affair-purple;
+  font-family: 'Avenir Heavy';
   height: 64px;
-  padding-top: 10px;
+  padding-top: 18px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  height: 22px;
+  margin-bottom: 64px;
+  text-align: center;
+
+  .crumb-box {   
+    border-top: 1px solid $yellow-green;
+    border-bottom: 1px solid $yellow-green;
+    width: 23%;
+    display: inline-block;
+    position: relative;
+    color: $affair-purple;
+  }
+
+  .crumb-box.highlight {
+    background-color: $yellow-green;
+  }
+  .crumb-box:nth-child(1) {
+    border-left: 1px solid $yellow-green;
+    z-index: 5;
+  } 
+  .crumb-box:nth-child(2) {
+    z-index: 4;
+  }
+  .crumb-box:nth-child(3) {
+    z-index: 3;
+  }
+  .crumb-box:nth-child(4) {
+    z-index: 2;
+  }
+
+  .crumb-box:after, .crumb-box:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .crumb-box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-left-color: #ffffff;
+    border-width: 10px;
+    margin-top: -10px;
+  }
+  .crumb-box:before {
+    border-color: rgba(184, 233, 134, 0);
+    border-left-color: $yellow-green;
+    border-width: 11px;
+    margin-top: -11px;
+  }
+
+  .crumb-box.highlight:after{
+    border-left-color: $yellow-green;
+  }
+}
+
+/* Forms */
+.form-group {
+  label {
+    font-weight: normal;
+  }
+  input {
+    border-radius: 0px;
+  }
+}
+
+form {
+  .row:nth-last-child(2){
+    margin-bottom: 64px;
+  }
 }
 
 .center-text {
   text-align: center;
+}
+
+.button-row {
+  text-align: center;
+  .btn:nth-child(1){
+    margin-right: 64px;
+  }
+  .btn {
+    width: 100%;
+  }
+}
+
+.btn-default {
+  border-radius: 0px;
+  border: none;
+  background-color: #9e9e9e;
+  color: white;
+  height: 50px;
+}
+
+.btn-default:hover {
+  background-color: darken(#9e9e9e, 5%);
+}
+
+.btn-primary {
+  border-radius: 0px;
+  border: none;
+  background-color: $affair-purple;
+  color: white;
+  height: 50px;
+}
+
+.form-wrapper {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.btn-primary:hover {
+  background-color: darken($affair-purple, 5%);
 }
